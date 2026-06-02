@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="PetLar.Application/PetLar.Application.csproj" />
+  <Project Path="PetLar.Core/PetLar.Core.csproj" />
+  <Project Path="PetLar.Infrastructure/PetLar.Infrastructure.csproj" />
+  <Project Path="PetLar.Web/PetLar.Web.csproj" />
+</Solution>
