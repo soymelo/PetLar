@@ -1,6 +1,6 @@
 ﻿using PetLar.Core.Entities;
 
-namespace PetLar.Core.Repositories;
+namespace PetLar.Core.Interfaces;
 
 public interface IUserRepository
 {
