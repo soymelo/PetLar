@@ -7,7 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PetLar.Application\PetLar.Application.csproj" />
+    <ProjectReference Include="..\PetLar.Core\PetLar.Core.csproj" />
     <ProjectReference Include="..\PetLar.Infrastructure\PetLar.Infrastructure.csproj" />
   </ItemGroup>
 
