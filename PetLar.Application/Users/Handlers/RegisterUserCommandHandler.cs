@@ -31,7 +31,7 @@ public class RegisterUserCommandHandler(IUserRepository _userRepository) : IRequ
         var existingUser = await _userRepository.GetByEmailAsync(request.Email);
         if (existingUser != null)
         {
-            throw new Exception("Este e-mail já está cadastrado.");
+            throw new InvalidOperationException("Este e-mail já está cadastrado.");
         }
     }
 }

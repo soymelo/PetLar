@@ -14,9 +14,4 @@
     <ProjectReference Include="..\PetLar.Core\PetLar.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Users\ViewModels\" />
-    <Folder Include="Users\Queries\" />
-  </ItemGroup>
-
 </Project>
