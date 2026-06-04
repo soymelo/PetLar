@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
+using PetLar.Core.Interfaces;
 using PetLar.Infrastructure.Data;
+using PetLar.Infrastructure.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,9 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<PetLarDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IPetRepository, PetRepository>();
 
 var app = builder.Build();
 

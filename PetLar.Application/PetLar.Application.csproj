@@ -7,7 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="14.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PetLar.Core\PetLar.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Users\ViewModels\" />
+    <Folder Include="Users\Queries\" />
   </ItemGroup>
 
 </Project>
