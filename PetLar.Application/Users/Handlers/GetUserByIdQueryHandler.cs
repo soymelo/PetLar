@@ -16,7 +16,8 @@ public class GetUserByIdQueryHandler(IUserRepository _userRepository) : IRequest
         return new UserViewModel(
             user.Id,
             user.Name,
-            user.Email
+            user.Email,
+            user.Type
         );
     }
 }

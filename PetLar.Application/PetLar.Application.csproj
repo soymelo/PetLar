@@ -14,4 +14,10 @@
     <ProjectReference Include="..\PetLar.Core\PetLar.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pets\Commands\" />
+    <Folder Include="Pets\Handlers\" />
+    <Folder Include="Pets\Queries\" />
+  </ItemGroup>
+
 </Project>

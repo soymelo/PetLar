@@ -1,7 +1,10 @@
-﻿namespace PetLar.Application.Users.ViewModels;
+﻿using PetLar.Core.Enums;
+
+namespace PetLar.Application.Users.ViewModels;
 
 public record UserViewModel(
     Guid Id,
     string Name,
-    string Email
+    string Email,
+    EnumType Type
 );
