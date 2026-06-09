@@ -1,7 +1,6 @@
 ﻿using MediatR;
 using PetLar.Application.Pets.Queries;
 using PetLar.Application.Pets.ViewModels;
-using PetLar.Core.Entities;
 using PetLar.Core.Interfaces;
 
 namespace PetLar.Application.Pets.Handlers;
