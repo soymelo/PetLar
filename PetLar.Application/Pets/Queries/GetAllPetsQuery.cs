@@ -1,6 +1,6 @@
 ﻿using MediatR;
-using PetLar.Application.Pets.ViewModels;
+using PetLar.Application.Pets.DTOs;
 
 namespace PetLar.Application.Pets.Queries;
 
-public record GetAllPetsQuery(): IRequest<IEnumerable<PetViewModel>>;
+public record GetAllPetsQuery(): IRequest<IEnumerable<PetDto>>;

@@ -1,8 +1,8 @@
 ﻿using PetLar.Core.Enums;
 
-namespace PetLar.Application.Users.ViewModels;
+namespace PetLar.Application.Users.DTOs;
 
-public record UserViewModel(
+public record UserDto(
     Guid Id,
     string Name,
     string Email,

@@ -1,8 +1,8 @@
 ﻿using PetLar.Core.Enums;
 
-namespace PetLar.Application.Pets.ViewModels;
+namespace PetLar.Application.Pets.DTOs;
 
-public record PetViewModel(
+public record PetDto(
     Guid Id,
     string Name,
     int Age,

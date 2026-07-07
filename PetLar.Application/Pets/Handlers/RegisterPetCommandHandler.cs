@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using PetLar.Application.Pets.Commands;
-using PetLar.Application.Users.Commands;
 using PetLar.Core.Entities;
 using PetLar.Core.Enums;
 using PetLar.Core.Interfaces;

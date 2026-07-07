@@ -1,17 +1,17 @@
 ﻿using MediatR;
 using PetLar.Application.Pets.Queries;
-using PetLar.Application.Pets.ViewModels;
+using PetLar.Application.Pets.DTOs;
 using PetLar.Core.Interfaces;
 
 namespace PetLar.Application.Pets.Handlers;
 
-public class GetAllPetsQueryHandler(IPetRepository _petRepository) : IRequestHandler<GetAllPetsQuery, IEnumerable<PetViewModel>>
+public class GetAllPetsQueryHandler(IPetRepository _petRepository) : IRequestHandler<GetAllPetsQuery, IEnumerable<PetDto>>
 {
-    public async Task<IEnumerable<PetViewModel>> Handle(GetAllPetsQuery request, CancellationToken ct)
+    public async Task<IEnumerable<PetDto>> Handle(GetAllPetsQuery request, CancellationToken ct)
     {
         var pets = await _petRepository.GetAllPetsAsync();
 
-        var petViewModel = pets.Select(p => new PetViewModel(
+        var petsDto = pets.Select(p => new PetDto(
             p.Id,
             p.Name,
             p.Age,
@@ -22,6 +22,6 @@ public class GetAllPetsQueryHandler(IPetRepository _petRepository) : IRequestHan
             p.OwnerId
         )).ToList();
 
-        return petViewModel;
+        return petsDto;
     }
 }
