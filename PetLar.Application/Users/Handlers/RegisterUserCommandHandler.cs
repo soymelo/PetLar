@@ -11,8 +11,8 @@ public class RegisterUserCommandHandler(IUserRepository _userRepository)
     public async Task<Guid> Handle(RegisterUserCommand request, CancellationToken ct)
     {
         await ValidationAsync(request);
-            
-        var passwordHash = request.Password; // Substituir por um hash real em outro momento.
+
+        var passwordHash = BCrypt.Net.BCrypt.HashPassword(request.Password, 11);
 
         var user = new User
         {
