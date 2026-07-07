@@ -9,7 +9,7 @@ public class GetAllPetsQueryHandler(IPetRepository _petRepository) : IRequestHan
 {
     public async Task<IEnumerable<PetDto>> Handle(GetAllPetsQuery request, CancellationToken ct)
     {
-        var pets = await _petRepository.GetAllPetsAsync();
+        var pets = await _petRepository.GetAllPetsAsync(ct);
 
         var petsDto = pets.Select(p => new PetDto(
             p.Id,

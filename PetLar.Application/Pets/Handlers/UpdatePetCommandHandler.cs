@@ -6,9 +6,9 @@ namespace PetLar.Application.Pets.Handlers;
 
 public class UpdatePetCommandHandler(IPetRepository _petRepository) : IRequestHandler<UpdatePetCommand, bool>
 {
-    public async Task<bool> Handle(UpdatePetCommand request, CancellationToken cancellationToken)
+    public async Task<bool> Handle(UpdatePetCommand request, CancellationToken ct)
     {
-        var pet = await _petRepository.GetByIdAsync(request.Id);
+        var pet = await _petRepository.GetByIdAsync(request.Id, ct);
         if (pet is null)
             return false;
 
@@ -22,7 +22,7 @@ public class UpdatePetCommandHandler(IPetRepository _petRepository) : IRequestHa
         pet.Size = request.Size;
         pet.Status = request.Status;
 
-        await _petRepository.UpdateAsync(pet);
+        await _petRepository.UpdateAsync(pet, ct);
         return true;
     }
 }

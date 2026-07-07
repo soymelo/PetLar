@@ -9,7 +9,7 @@ public class GetUserByIdQueryHandler(IUserRepository _userRepository) : IRequest
 {
     public async Task<UserDto?> Handle(GetUserByIdQuery request, CancellationToken ct)
     {
-        var user = await _userRepository.GetByIdAsync(request.Id);
+        var user = await _userRepository.GetByIdAsync(request.Id, ct);
         if (user is null)
             return null;
 

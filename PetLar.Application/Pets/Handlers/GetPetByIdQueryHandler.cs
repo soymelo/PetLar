@@ -9,7 +9,7 @@ public class GetPetByIdQueryHandler(IPetRepository _petRepository) : IRequestHan
 {
     public async Task<PetDto?> Handle(GetPetByIdQuery request, CancellationToken ct)
     {
-        var pet = await _petRepository.GetByIdAsync(request.Id);
+        var pet = await _petRepository.GetByIdAsync(request.Id, ct);
         if (pet is null)
             return null;
 

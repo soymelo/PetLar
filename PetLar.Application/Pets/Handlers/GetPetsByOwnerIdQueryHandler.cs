@@ -9,7 +9,7 @@ public class GetPetsByOwnerIdQueryHandler(IPetRepository _petRepository) : IRequ
 {
     public async Task<IEnumerable<PetDto>> Handle(GetPetsByOwnerIdQuery request, CancellationToken ct)
     {
-        var pets = await _petRepository.GetByOwnerIdAsync(request.OwnerId);
+        var pets = await _petRepository.GetByOwnerIdAsync(request.OwnerId, ct);
 
         var petsDto = pets.Select(p => new PetDto(
             p.Id,

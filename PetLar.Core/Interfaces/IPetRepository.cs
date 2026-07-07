@@ -4,9 +4,9 @@ namespace PetLar.Core.Interfaces;
 
 public interface IPetRepository
 {
-    Task AddAsync(Pet pet);
-    Task<Pet?> GetByIdAsync(Guid id);
-    Task<IEnumerable<Pet>> GetAllPetsAsync();
-    Task UpdateAsync(Pet pet);
-    Task<IEnumerable<Pet>> GetByOwnerIdAsync(Guid ownerId);
+    Task AddAsync(Pet pet, CancellationToken ct);
+    Task<Pet?> GetByIdAsync(Guid id, CancellationToken ct);
+    Task<IEnumerable<Pet>> GetAllPetsAsync(CancellationToken ct);
+    Task UpdateAsync(Pet pet, CancellationToken ct);
+    Task<IEnumerable<Pet>> GetByOwnerIdAsync(Guid ownerId, CancellationToken ct);
 }

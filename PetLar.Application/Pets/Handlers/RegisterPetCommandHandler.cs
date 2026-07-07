@@ -22,7 +22,7 @@ public class RegisterPetCommandHandler(IPetRepository _petRepository) : IRequest
             OwnerId = request.OwnerId,
         };
 
-        await _petRepository.AddAsync(pet);
+        await _petRepository.AddAsync(pet, ct);
 
         return pet.Id;
     }

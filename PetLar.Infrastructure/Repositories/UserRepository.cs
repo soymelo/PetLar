@@ -7,19 +7,19 @@ namespace PetLar.Infrastructure.Repositories;
 
 public class UserRepository(PetLarDbContext _context) : IUserRepository
 {
-    public async Task AddAsync(User user)
+    public async Task AddAsync(User user, CancellationToken ct)
     {
         _context.Users.Add(user);
-        await _context.SaveChangesAsync();
+        await _context.SaveChangesAsync(ct);
     }
 
-    public async Task<User?> GetByIdAsync(Guid id)
+    public async Task<User?> GetByIdAsync(Guid id, CancellationToken ct)
     {
-        return await _context.Users.FindAsync(id);
+        return await _context.Users.FirstOrDefaultAsync(u => u.Id == id, ct);
     }
 
-    public async Task<User?> GetByEmailAsync(string email)
+    public async Task<User?> GetByEmailAsync(string email, CancellationToken ct)
     {
-        return await _context.Users.FirstOrDefaultAsync(u => u.Email == email);
+        return await _context.Users.FirstOrDefaultAsync(u => u.Email == email, ct);
     }
 }
