@@ -14,6 +14,9 @@ builder.Services.AddDbContext<PetLarDbContext>(options =>
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IPetRepository, PetRepository>();
 
+builder.Services.AddMediatR(config =>
+    config.RegisterServicesFromAssembly(typeof(PetLar.Application.Users.Commands.RegisterUserCommand).Assembly));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
