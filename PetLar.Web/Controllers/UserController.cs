@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using PetLar.Application.Users.Commands;
 using PetLar.Web.ViewModels;
@@ -26,17 +26,14 @@ public class UserController(IMediator _mediator) : Controller
             model.Email,
             model.Password);
 
-        try
-        {
-            await _mediator.Send(command);
+        var result = await _mediator.Send(command);
 
-            return RedirectToAction("Index", "Home");
-        }
-        catch (InvalidOperationException ex)
+        if (result.IsFailure)
         {
-            ModelState.AddModelError(string.Empty, ex.Message);
+            ModelState.AddModelError(nameof(model.Email), result.Error.Message);
             return View(model);
         }
+
+        return RedirectToAction("Index", "Home");
     }
 }
-

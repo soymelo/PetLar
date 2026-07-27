@@ -1,16 +1,22 @@
-﻿using MediatR;
+using MediatR;
+using PetLar.Application.Common.Results;
 using PetLar.Application.Users.Commands;
+using PetLar.Application.Users.Errors;
 using PetLar.Core.Entities;
 using PetLar.Core.Interfaces;
 
 namespace PetLar.Application.Users.Handlers;
 
 public class RegisterUserCommandHandler(IUserRepository _userRepository)
-                                        : IRequestHandler<RegisterUserCommand, Guid>
+    : IRequestHandler<RegisterUserCommand, Result<Guid>>
 {
-    public async Task<Guid> Handle(RegisterUserCommand request, CancellationToken ct)
+    public async Task<Result<Guid>> Handle(RegisterUserCommand request, CancellationToken ct)
     {
-        await ValidationAsync(request, ct);
+        var existingUser = await _userRepository.GetByEmailAsync(request.Email, ct);
+        if (existingUser is not null)
+        {
+            return Result<Guid>.Failure(UserErrors.EmailAlreadyRegistered);
+        }
 
         var passwordHash = BCrypt.Net.BCrypt.HashPassword(request.Password, 11);
 
@@ -24,15 +30,6 @@ public class RegisterUserCommandHandler(IUserRepository _userRepository)
 
         await _userRepository.AddAsync(user, ct);
 
-        return user.Id;
-    }
-
-    private async Task ValidationAsync(RegisterUserCommand request, CancellationToken ct)
-    {
-        var existingUser = await _userRepository.GetByEmailAsync(request.Email, ct);
-        if (existingUser != null)
-        {
-            throw new InvalidOperationException("Este e-mail já está cadastrado.");
-        }
+        return Result<Guid>.Success(user.Id);
     }
 }

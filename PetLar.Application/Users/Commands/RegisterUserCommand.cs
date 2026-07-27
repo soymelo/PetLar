@@ -1,4 +1,5 @@
-﻿using MediatR;
+using MediatR;
+using PetLar.Application.Common.Results;
 
 namespace PetLar.Application.Users.Commands;
 
@@ -6,4 +7,4 @@ public record RegisterUserCommand(
     string Name,
     string Email,
     string Password
-) : IRequest<Guid>;
+) : IRequest<Result<Guid>>;
