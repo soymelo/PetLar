@@ -7,8 +7,7 @@ using PetLar.Core.Interfaces;
 
 namespace PetLar.Application.Users.Handlers;
 
-public class RegisterUserCommandHandler(IUserRepository _userRepository)
-    : IRequestHandler<RegisterUserCommand, Result<Guid>>
+public class RegisterUserCommandHandler(IUserRepository _userRepository) : IRequestHandler<RegisterUserCommand, Result<Guid>>
 {
     public async Task<Result<Guid>> Handle(RegisterUserCommand request, CancellationToken ct)
     {

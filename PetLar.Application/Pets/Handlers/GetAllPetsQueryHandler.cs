@@ -2,12 +2,13 @@
 using PetLar.Application.Pets.Queries;
 using PetLar.Application.Pets.DTOs;
 using PetLar.Core.Interfaces;
+using PetLar.Application.Common.Results;
 
 namespace PetLar.Application.Pets.Handlers;
 
-public class GetAllPetsQueryHandler(IPetRepository _petRepository) : IRequestHandler<GetAllPetsQuery, IEnumerable<PetDto>>
+public class GetAllPetsQueryHandler(IPetRepository _petRepository) : IRequestHandler<GetAllPetsQuery, Result<IEnumerable<PetDto>>>
 {
-    public async Task<IEnumerable<PetDto>> Handle(GetAllPetsQuery request, CancellationToken ct)
+    public async Task<Result<IEnumerable<PetDto>>> Handle(GetAllPetsQuery _, CancellationToken ct)
     {
         var pets = await _petRepository.GetAllPetsAsync(ct);
 
@@ -22,6 +23,6 @@ public class GetAllPetsQueryHandler(IPetRepository _petRepository) : IRequestHan
             p.OwnerId
         )).ToList();
 
-        return petsDto;
+        return Result<IEnumerable<PetDto>>.Success(petsDto);
     }
 }

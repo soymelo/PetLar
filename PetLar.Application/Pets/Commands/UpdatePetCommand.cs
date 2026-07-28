@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using PetLar.Application.Common.Results;
 using PetLar.Core.Enums;
 
 namespace PetLar.Application.Pets.Commands;
@@ -12,4 +13,4 @@ public record UpdatePetCommand(
     EnumSize Size,
     EnumPetStatus Status,
     Guid OwnerId
-) : IRequest<bool>;
+) : IRequest<Result>;

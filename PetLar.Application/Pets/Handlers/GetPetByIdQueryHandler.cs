@@ -2,18 +2,20 @@
 using PetLar.Application.Pets.Queries;
 using PetLar.Application.Pets.DTOs;
 using PetLar.Core.Interfaces;
+using PetLar.Application.Common.Results;
+using PetLar.Application.Pets.Errors;
 
 namespace PetLar.Application.Pets.Handlers;
 
-public class GetPetByIdQueryHandler(IPetRepository _petRepository) : IRequestHandler<GetPetByIdQuery, PetDto?>
+public class GetPetByIdQueryHandler(IPetRepository _petRepository) : IRequestHandler<GetPetByIdQuery, Result<PetDto>>
 {
-    public async Task<PetDto?> Handle(GetPetByIdQuery request, CancellationToken ct)
+    public async Task<Result<PetDto>> Handle(GetPetByIdQuery request, CancellationToken ct)
     {
         var pet = await _petRepository.GetByIdAsync(request.Id, ct);
         if (pet is null)
-            return null;
+            return Result<PetDto>.Failure(PetErrors.PetNotFound);
 
-        return new PetDto(
+        var petDto = new PetDto(
             pet.Id,
             pet.Name,
             pet.Age,
@@ -23,5 +25,7 @@ public class GetPetByIdQueryHandler(IPetRepository _petRepository) : IRequestHan
             pet.Status,
             pet.OwnerId
         );
+
+        return Result<PetDto>.Success(petDto);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using PetLar.Application.Common.Results;
 using PetLar.Core.Enums;
 
 namespace PetLar.Application.Pets.Commands;
@@ -10,4 +11,4 @@ public record RegisterPetCommand(
     EnumSpecies Species,
     EnumSize Size,
     Guid OwnerId
-) : IRequest<Guid>;
+) : IRequest<Result<Guid>>;

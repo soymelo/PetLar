@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using PetLar.Application.Common.Results;
 using PetLar.Application.Pets.Commands;
 using PetLar.Core.Entities;
 using PetLar.Core.Enums;
@@ -6,9 +7,9 @@ using PetLar.Core.Interfaces;
 
 namespace PetLar.Application.Pets.Handlers;
 
-public class RegisterPetCommandHandler(IPetRepository _petRepository) : IRequestHandler<RegisterPetCommand, Guid>
+public class RegisterPetCommandHandler(IPetRepository _petRepository) : IRequestHandler<RegisterPetCommand, Result<Guid>>
 {
-    public async Task<Guid> Handle(RegisterPetCommand request, CancellationToken ct)
+    public async Task<Result<Guid>> Handle(RegisterPetCommand request, CancellationToken ct)
     {
         var pet = new Pet
         {
@@ -24,6 +25,6 @@ public class RegisterPetCommandHandler(IPetRepository _petRepository) : IRequest
 
         await _petRepository.AddAsync(pet, ct);
 
-        return pet.Id;
+        return Result<Guid>.Success(pet.Id);
     }
 }

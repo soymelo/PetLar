@@ -1,13 +1,14 @@
 ﻿using MediatR;
+using PetLar.Application.Common.Results;
 using PetLar.Application.Pets.DTOs;
 using PetLar.Application.Pets.Queries;
 using PetLar.Core.Interfaces;
 
 namespace PetLar.Application.Pets.Handlers;
 
-public class GetPetsByOwnerIdQueryHandler(IPetRepository _petRepository) : IRequestHandler<GetPetsByOwnerIdQuery, IEnumerable<PetDto>>
+public class GetPetsByOwnerIdQueryHandler(IPetRepository _petRepository) : IRequestHandler<GetPetsByOwnerIdQuery, Result<IEnumerable<PetDto>>>
 {
-    public async Task<IEnumerable<PetDto>> Handle(GetPetsByOwnerIdQuery request, CancellationToken ct)
+    public async Task<Result<IEnumerable<PetDto>>> Handle(GetPetsByOwnerIdQuery request, CancellationToken ct)
     {
         var pets = await _petRepository.GetByOwnerIdAsync(request.OwnerId, ct);
 
@@ -22,6 +23,6 @@ public class GetPetsByOwnerIdQueryHandler(IPetRepository _petRepository) : IRequ
             p.OwnerId
         )).ToList();
 
-        return petsDto;
+        return Result<IEnumerable<PetDto>>.Success(petsDto);
     }
 }
