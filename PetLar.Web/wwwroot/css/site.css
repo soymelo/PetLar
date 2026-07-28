@@ -29,3 +29,183 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+:root {
+    --petlar-teal: #167d74;
+    --petlar-teal-light: #ebf5f4;
+    --petlar-text: #25302f;
+    --petlar-text-muted: #66706e;
+    --petlar-border: #e4e8e7;
+    --petlar-background: #fafaf7;
+    --petlar-coral: #f27d65;
+    --petlar-coral-hover: #e0614a;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+.petlar-navbar {
+    min-height: 68px;
+    background-color: rgb(250 250 247 / 95%);
+    border-bottom: 1px solid var(--petlar-border);
+    backdrop-filter: blur(8px);
+}
+
+.petlar-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--petlar-teal);
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+}
+
+a.petlar-brand,
+a.petlar-brand:visited {
+    color: var(--petlar-teal) !important;
+}
+
+a.petlar-brand:hover,
+a.petlar-brand:focus-visible {
+    color: var(--petlar-teal);
+}
+
+.petlar-brand-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    border-radius: 0.75rem;
+    background: linear-gradient(135deg, var(--petlar-teal), #1fa398);
+    color: #fff;
+}
+
+.petlar-brand-icon svg {
+    width: 1.4rem;
+    height: 1.4rem;
+}
+
+.petlar-nav-links {
+    gap: 1.5rem;
+}
+
+.petlar-nav-links .nav-link {
+    padding: 0.5rem 0;
+    border: 0;
+    background: transparent;
+    color: var(--petlar-text-muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.petlar-nav-links .nav-link:hover,
+.petlar-nav-links .nav-link:focus-visible {
+    color: var(--petlar-teal) !important;
+}
+
+.petlar-nav-links a.nav-link,
+.petlar-nav-links a.nav-link:visited {
+    color: var(--petlar-text-muted) !important;
+}
+
+.petlar-nav-links a.nav-link:hover,
+.petlar-nav-links a.nav-link:focus-visible {
+    color: var(--petlar-teal) !important;
+}
+
+.petlar-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.btn-petlar-ngo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 40px;
+    padding: 0.45rem 0.75rem;
+    border-color: var(--petlar-border);
+    border-radius: 0.5rem;
+    background: transparent;
+    color: var(--petlar-text-muted);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.btn-petlar-ngo svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+.btn-petlar-ngo:hover,
+.btn-petlar-ngo:focus-visible {
+    border-color: var(--petlar-teal);
+    color: var(--petlar-teal);
+}
+
+a.btn-petlar-ngo,
+a.btn-petlar-ngo:visited {
+    color: var(--petlar-text-muted) !important;
+}
+
+.btn-petlar-coral {
+    background-color: var(--petlar-coral);
+    border-color: var(--petlar-coral);
+    border-radius: 0.65rem;
+    color: #fff;
+    font-weight: 700;
+}
+
+a.btn-petlar-coral,
+a.btn-petlar-coral:visited {
+    color: #fff !important;
+}
+
+    .btn-petlar-coral:hover,
+    .btn-petlar-coral:focus {
+        background-color: var(--petlar-coral-hover);
+        border-color: var(--petlar-coral-hover);
+        color: #fff;
+    }
+
+@media (max-width: 767.98px) {
+    .petlar-navbar .navbar-collapse {
+        padding: 0.75rem 0 1.25rem;
+        border-top: 1px solid var(--petlar-border);
+        margin-top: 0.75rem;
+    }
+
+    .petlar-nav-links {
+        gap: 0;
+        margin-bottom: 0.75rem;
+    }
+
+    .petlar-nav-links .nav-link {
+        width: 100%;
+        min-height: 44px;
+        padding: 0.65rem 0.5rem;
+        text-align: left;
+        color: var(--petlar-text);
+    }
+
+    .petlar-nav-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .petlar-nav-actions .btn {
+        width: 100%;
+        min-height: 44px;
+    }
+}
