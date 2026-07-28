@@ -18,7 +18,18 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-bottom: 0;
+}
+
+body > .container {
+  flex: 1 0 auto;
+}
+
+.petlar-footer {
+  flex-shrink: 0;
 }
 
 .form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
@@ -179,6 +190,77 @@ a.btn-petlar-coral:visited {
         color: #fff;
     }
 
+.petlar-footer {
+    margin-top: 4rem;
+    padding: 3rem 0 2rem;
+    background-color: #1a2a29;
+}
+
+.petlar-footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+}
+
+.petlar-footer-brand,
+.petlar-footer-brand:visited,
+.petlar-footer-brand:hover {
+    color: #fff !important;
+}
+
+.petlar-footer-description {
+    max-width: 22rem;
+    margin: 1rem 0 0;
+    color: #a0aeac;
+    line-height: 1.65;
+}
+
+.petlar-footer-links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.petlar-footer-links a {
+    display: inline-block;
+    margin-bottom: 0.625rem;
+    color: #d1d8d7;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.petlar-footer-links a:visited {
+    color: #d1d8d7;
+}
+
+.petlar-footer-links a:hover,
+.petlar-footer-links a:focus-visible {
+    color: #67d4cc;
+}
+
+.petlar-footer-title {
+    margin: 0 0 1rem;
+    color: #a0aeac;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.petlar-footer-bottom {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #2e3f3e;
+    color: #66706e;
+    text-align: center;
+}
+
 @media (max-width: 767.98px) {
     .petlar-navbar .navbar-collapse {
         padding: 0.75rem 0 1.25rem;
@@ -207,5 +289,14 @@ a.btn-petlar-coral:visited {
     .petlar-nav-actions .btn {
         width: 100%;
         min-height: 44px;
+    }
+
+    .petlar-footer {
+        margin-top: 3rem;
+        padding-top: 2.5rem;
+    }
+
+    .petlar-footer-bottom {
+        margin-top: 2.5rem;
     }
 }
