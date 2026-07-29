@@ -261,6 +261,93 @@ a.btn-petlar-coral:visited {
     text-align: center;
 }
 
+span.petlar-home-title {
+    color: var(--petlar-teal);
+}
+
+.btn-petlar-outline {
+    border: 1px solid var(--petlar-teal);
+    border-radius: 0.65rem;
+    color: var(--petlar-teal);
+    font-weight: 700;
+}
+
+.btn-petlar-outline:hover,
+.btn-petlar-outline:focus-visible {
+    background-color: var(--petlar-teal-light);
+    border-color: var(--petlar-teal);
+    color: var(--petlar-teal);
+}
+
+.petlar-home-hero {
+    min-height: 32rem;
+}
+
+.petlar-home-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 0 1.25rem;
+    padding: 0.45rem 0.75rem;
+    border-radius: 2rem;
+    background-color: var(--petlar-teal-light);
+    color: var(--petlar-teal);
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.petlar-home-eyebrow-icon {
+    font-size: 0.8rem;
+}
+
+.petlar-home-heading {
+    max-width: 37rem;
+    margin: 0;
+    color: var(--petlar-text);
+    font-size: clamp(2rem, 3.5vw, 3.5rem);
+    letter-spacing: -0.04em;
+    line-height: 1.08;
+}
+
+.petlar-home-title {
+    display: block;
+    color: var(--petlar-teal);
+}
+
+.petlar-home-description {
+    max-width: 33rem;
+    margin: 1.5rem 0 2rem;
+    color: var(--petlar-text-muted);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.petlar-home-stats {
+    width: 100%;
+    max-width: 34rem;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--petlar-border);
+}
+
+.petlar-home-stats strong,
+.petlar-home-stats span {
+    display: block;
+}
+
+.petlar-home-stats strong {
+    color: var(--petlar-teal);
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+.petlar-home-stats span {
+    margin-top: 0.35rem;
+    color: var(--petlar-text-muted);
+    font-size: 0.75rem;
+    line-height: 1.35;
+}
+
 @media (max-width: 767.98px) {
     .petlar-navbar .navbar-collapse {
         padding: 0.75rem 0 1.25rem;
@@ -273,23 +360,23 @@ a.btn-petlar-coral:visited {
         margin-bottom: 0.75rem;
     }
 
-    .petlar-nav-links .nav-link {
-        width: 100%;
-        min-height: 44px;
-        padding: 0.65rem 0.5rem;
-        text-align: left;
-        color: var(--petlar-text);
-    }
+        .petlar-nav-links .nav-link {
+            width: 100%;
+            min-height: 44px;
+            padding: 0.65rem 0.5rem;
+            text-align: left;
+            color: var(--petlar-text);
+        }
 
     .petlar-nav-actions {
         flex-direction: column;
         align-items: stretch;
     }
 
-    .petlar-nav-actions .btn {
-        width: 100%;
-        min-height: 44px;
-    }
+        .petlar-nav-actions .btn {
+            width: 100%;
+            min-height: 44px;
+        }
 
     .petlar-footer {
         margin-top: 3rem;

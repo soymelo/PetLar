@@ -2,11 +2,44 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div>
-    <h1>
-        <b>
-            Todo pet merece um lar
-            <span class="petlar-brand">cheio de amor.</span>
-        </b>
-    </h1>
-</div>
+<section class="petlar-home-hero py-5" aria-labelledby="home-title">
+    <div class="row align-items-center g-5">
+        <div class="col-12 col-lg-6">
+            <div class="d-flex flex-column align-items-start">
+                <p class="petlar-home-eyebrow">
+                    <span class="petlar-home-eyebrow-icon" aria-hidden="true">♥</span>
+                    X pets esperando por um lar
+                </p>
+
+                <h1 id="home-title" class="petlar-home-heading fw-bold">
+                    Todo pet merece um lar
+                    <span class="petlar-home-title">cheio de amor.</span>
+                </h1>
+
+                <p class="petlar-home-description">
+                    Encontre cães e gatos esperando por uma nova família perto de você. Adoção simples, responsável e cheia de carinho.
+                </p>
+
+                <div class="d-flex flex-wrap gap-3">
+                    <a class="btn btn-petlar-coral btn-lg" asp-controller="" asp-action="">Encontrar um pet</a>
+                    <a class="btn btn-petlar-outline btn-lg" asp-controller="" asp-action="">Sou uma ONG</a>
+                </div>
+
+                <div class="row row-cols-3 g-3 petlar-home-stats" aria-label="Números do PetLar">
+                    <div class="col">
+                        <strong>X.XXX+</strong>
+                        <span>Adoções realizadas</span>
+                    </div>
+                    <div class="col">
+                        <strong>XXX+</strong>
+                        <span>ONGs parceiras</span>
+                    </div>
+                    <div class="col">
+                        <strong>XX</strong>
+                        <span>Pets disponíveis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
