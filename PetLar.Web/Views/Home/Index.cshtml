@@ -1,4 +1,6 @@
-﻿@{
+﻿@model PetLar.Web.ViewModels.HomeViewModel
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -8,7 +10,7 @@
             <div class="d-flex flex-column align-items-start">
                 <p class="petlar-home-eyebrow">
                     <span class="petlar-home-eyebrow-icon" aria-hidden="true">♥</span>
-                    X pets esperando por um lar
+                    @Model.AvailablePetsCount pets esperando por um lar
                 </p>
 
                 <h1 id="home-title" class="petlar-home-heading fw-bold">
@@ -27,15 +29,15 @@
 
                 <div class="row row-cols-3 g-3 petlar-home-stats" aria-label="Números do PetLar">
                     <div class="col">
-                        <strong>X.XXX+</strong>
+                        <strong>—</strong>
                         <span>Adoções realizadas</span>
                     </div>
                     <div class="col">
-                        <strong>XXX+</strong>
+                        <strong>—</strong>
                         <span>ONGs parceiras</span>
                     </div>
                     <div class="col">
-                        <strong>XX</strong>
+                        <strong>@Model.AvailablePetsCount</strong>
                         <span>Pets disponíveis</span>
                     </div>
                 </div>

@@ -14,24 +14,24 @@ public class UserController(IMediator _mediator) : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Register(RegisterUserViewModel model)
+    public async Task<IActionResult> Register(RegisterUserViewModel vm)
     {
         if (!ModelState.IsValid)
         {
-            return View(model);
+            return View(vm);
         }
 
         var command = new RegisterUserCommand(
-            model.Name,
-            model.Email,
-            model.Password);
+            vm.Name,
+            vm.Email,
+            vm.Password);
 
         var result = await _mediator.Send(command);
 
         if (result.IsFailure)
         {
-            ModelState.AddModelError(nameof(model.Email), result.Error.Message);
-            return View(model);
+            ModelState.AddModelError(nameof(vm.Email), result.Error.Message);
+            return View(vm);
         }
 
         return RedirectToAction("Index", "Home");

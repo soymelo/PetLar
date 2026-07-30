@@ -11,6 +11,7 @@ public static class PetErrors
     public static readonly Error UserIsNotOng =
         new("PET.USER_IS_NOT_ONG",
         "O usuário informado não é uma ONG");
+
     public static readonly Error PetNotFound = 
         new("PET.NOT_FOUND",
         "Pet não encontrado");

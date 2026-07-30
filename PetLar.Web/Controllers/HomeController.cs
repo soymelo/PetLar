@@ -1,14 +1,34 @@
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using PetLar.Application.Pets.Queries;
 using PetLar.Web.Models;
+using PetLar.Web.ViewModels;
 using System.Diagnostics;
 
 namespace PetLar.Web.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController(IMediator _mediator) : Controller
     {
-        public IActionResult Index()
+        public async Task<IActionResult> Index(CancellationToken ct)
         {
-            return View();
+            var result = await _mediator.Send(new GetAvailablePetsQuery(), ct);
+
+            if (result.IsFailure)
+            {
+                return View("Error", new ErrorViewModel
+                {
+                    RequestId = HttpContext.TraceIdentifier
+                });
+            }
+
+            var pets = result.Value?.ToList() ?? [];
+
+            var model = new HomeViewModel
+            {
+                AvailablePets = pets
+            };
+
+            return View(model);
         }
 
         public IActionResult Privacy()

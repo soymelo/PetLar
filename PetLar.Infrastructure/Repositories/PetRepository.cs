@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PetLar.Core.Entities;
+using PetLar.Core.Enums;
 using PetLar.Core.Interfaces;
 using PetLar.Infrastructure.Data;
 
@@ -33,4 +34,13 @@ public class PetRepository(PetLarDbContext _context) : IPetRepository
     {
         return await _context.Pets.Where(p => p.OngId == ongId).Include(p => p.Ong).ToListAsync(ct);
     }
+
+    public async Task<IEnumerable<Pet>> GetAvailablePetsAsync(CancellationToken ct)
+    {
+        return await _context.Pets
+            .AsNoTracking()
+            .Where(p => p.Status == EnumPetStatus.Available)
+            .ToListAsync(ct);
+    }
+
 }
