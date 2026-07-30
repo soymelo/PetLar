@@ -10,5 +10,5 @@ public record PetDto(
     EnumSpecies Species,
     EnumSize Size,
     EnumPetStatus Status,
-    Guid OwnerId
+    Guid OngId
     );

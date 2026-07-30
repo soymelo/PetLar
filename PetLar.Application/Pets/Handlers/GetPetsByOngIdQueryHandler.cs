@@ -6,11 +6,11 @@ using PetLar.Core.Interfaces;
 
 namespace PetLar.Application.Pets.Handlers;
 
-public class GetPetsByOwnerIdQueryHandler(IPetRepository _petRepository) : IRequestHandler<GetPetsByOwnerIdQuery, Result<IEnumerable<PetDto>>>
+public class GetPetsByOngIdQueryHandler(IPetRepository _petRepository) : IRequestHandler<GetPetsByOngIdQuery, Result<IEnumerable<PetDto>>>
 {
-    public async Task<Result<IEnumerable<PetDto>>> Handle(GetPetsByOwnerIdQuery request, CancellationToken ct)
+    public async Task<Result<IEnumerable<PetDto>>> Handle(GetPetsByOngIdQuery request, CancellationToken ct)
     {
-        var pets = await _petRepository.GetByOwnerIdAsync(request.OwnerId, ct);
+        var pets = await _petRepository.GetByOngIdAsync(request.OngId, ct);
 
         var petsDto = pets.Select(p => new PetDto(
             p.Id,
@@ -20,7 +20,7 @@ public class GetPetsByOwnerIdQueryHandler(IPetRepository _petRepository) : IRequ
             p.Species,
             p.Size,
             p.Status,
-            p.OwnerId
+            p.OngId
         )).ToList();
 
         return Result<IEnumerable<PetDto>>.Success(petsDto);

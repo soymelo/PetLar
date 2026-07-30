@@ -12,6 +12,6 @@ public class Pet
     public EnumSize Size { get; set; }
     public EnumPetStatus Status { get; set; }
 
-    public Guid OwnerId { get; set; }
-    public User Owner { get; set; } = null!;
+    public Guid OngId { get; set; }
+    public User Ong { get; set; } = null!;
 }

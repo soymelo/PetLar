@@ -14,7 +14,7 @@ public class UpdatePetCommandHandler(IPetRepository _petRepository) : IRequestHa
         if (pet is null)
             return Result.Failure(PetErrors.PetNotFound);
 
-        if (pet.OwnerId != request.OwnerId)
+        if (pet.OngId != request.OngId)
             return Result.Failure(PetErrors.PetNotOwnedByUser);
 
         pet.Name = request.Name;

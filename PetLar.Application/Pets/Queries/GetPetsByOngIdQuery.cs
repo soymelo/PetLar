@@ -4,6 +4,6 @@ using PetLar.Application.Pets.DTOs;
 
 namespace PetLar.Application.Pets.Queries;
 
-public record GetPetsByOwnerIdQuery(
-    Guid OwnerId
+public record GetPetsByOngIdQuery(
+    Guid OngId
 ) : IRequest<Result<IEnumerable<PetDto>>>;

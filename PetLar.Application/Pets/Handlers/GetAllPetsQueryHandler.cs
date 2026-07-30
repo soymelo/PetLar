@@ -20,7 +20,7 @@ public class GetAllPetsQueryHandler(IPetRepository _petRepository) : IRequestHan
             p.Species,
             p.Size,
             p.Status,
-            p.OwnerId
+            p.OngId
         )).ToList();
 
         return Result<IEnumerable<PetDto>>.Success(petsDto);

@@ -10,5 +10,5 @@ public record RegisterPetCommand(
     EnumGender Gender,
     EnumSpecies Species,
     EnumSize Size,
-    Guid OwnerId
+    Guid OngId
 ) : IRequest<Result<Guid>>;

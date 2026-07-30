@@ -12,5 +12,5 @@ public record UpdatePetCommand(
     EnumSpecies Species,
     EnumSize Size,
     EnumPetStatus Status,
-    Guid OwnerId
+    Guid OngId
 ) : IRequest<Result>;

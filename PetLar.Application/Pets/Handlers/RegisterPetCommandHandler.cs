@@ -20,7 +20,7 @@ public class RegisterPetCommandHandler(IPetRepository _petRepository) : IRequest
             Species = request.Species,
             Size = request.Size,
             Status = EnumPetStatus.Available,
-            OwnerId = request.OwnerId,
+            OngId = request.OngId,
         };
 
         await _petRepository.AddAsync(pet, ct);

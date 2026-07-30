@@ -23,7 +23,7 @@ public class GetPetByIdQueryHandler(IPetRepository _petRepository) : IRequestHan
             pet.Species,
             pet.Size,
             pet.Status,
-            pet.OwnerId
+            pet.OngId
         );
 
         return Result<PetDto>.Success(petDto);
