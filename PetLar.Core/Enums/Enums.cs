@@ -1,11 +1,11 @@
 ﻿namespace PetLar.Core.Enums;
 
-public enum EnumType { User, Ong }
+public enum UserType { Adopter, Ong }
 
-public enum EnumGender { Male, Female }
+public enum PetGender { Male, Female }
 
-public enum EnumSpecies { Dog, Cat }
+public enum PetSpecies { Dog, Cat }
 
-public enum EnumSize { Small, Medium, Large }
+public enum PetSize { Small, Medium, Large }
 
-public enum EnumPetStatus { Available, Adopted, Pending }
+public enum PetStatus { Available, Adopted, Pending }

@@ -26,6 +26,6 @@ public class UserRepository(PetLarDbContext _context) : IUserRepository
 
     public async Task<int> GetOngsCountAsync(CancellationToken ct)
     {
-        return await _context.Users.CountAsync(u => u.Type == EnumType.Ong, ct);
+        return await _context.Users.CountAsync(u => u.Type == UserType.Ong, ct);
     }
 }

@@ -16,7 +16,7 @@ public class RegisterPetCommandHandler(IPetRepository _petRepository, IUserRepos
         if (user is null)
             return Result<Guid>.Failure(PetErrors.OngNotFound);
 
-        if (user.Type != EnumType.Ong)
+        if (user.Type != UserType.Ong)
             return Result<Guid>.Failure(PetErrors.UserIsNotOng);
 
         var pet = new Pet
@@ -27,7 +27,7 @@ public class RegisterPetCommandHandler(IPetRepository _petRepository, IUserRepos
             Gender = request.Gender,
             Species = request.Species,
             Size = request.Size,
-            Status = EnumPetStatus.Available,
+            Status = PetStatus.Available,
             OngId = request.OngId,
         };
 

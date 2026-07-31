@@ -6,5 +6,5 @@ public record UserDto(
     Guid Id,
     string Name,
     string Email,
-    EnumType Type
+    UserType Type
 );

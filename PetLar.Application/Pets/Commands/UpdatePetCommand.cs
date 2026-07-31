@@ -8,9 +8,9 @@ public record UpdatePetCommand(
     Guid Id,
     string Name,
     int Age,
-    EnumGender Gender,
-    EnumSpecies Species,
-    EnumSize Size,
-    EnumPetStatus Status,
+    PetGender Gender,
+    PetSpecies Species,
+    PetSize Size,
+    PetStatus Status,
     Guid OngId
 ) : IRequest<Result>;

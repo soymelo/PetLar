@@ -39,7 +39,7 @@ public class PetRepository(PetLarDbContext _context) : IPetRepository
     {
         return await _context.Pets
             .AsNoTracking()
-            .Where(p => p.Status == EnumPetStatus.Available)
+            .Where(p => p.Status == PetStatus.Available)
             .ToListAsync(ct);
     }
 

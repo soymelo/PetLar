@@ -7,8 +7,8 @@ namespace PetLar.Application.Pets.Commands;
 public record RegisterPetCommand(
     string Name,
     int Age,
-    EnumGender Gender,
-    EnumSpecies Species,
-    EnumSize Size,
+    PetGender Gender,
+    PetSpecies Species,
+    PetSize Size,
     Guid OngId
 ) : IRequest<Result<Guid>>;
