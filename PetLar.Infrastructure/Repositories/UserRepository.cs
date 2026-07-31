@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PetLar.Core.Entities;
+using PetLar.Core.Enums;
 using PetLar.Core.Interfaces;
 using PetLar.Infrastructure.Data;
 
@@ -21,5 +22,10 @@ public class UserRepository(PetLarDbContext _context) : IUserRepository
     public async Task<User?> GetByEmailAsync(string email, CancellationToken ct)
     {
         return await _context.Users.FirstOrDefaultAsync(u => u.Email == email, ct);
+    }
+
+    public async Task<int> GetOngsCountAsync(CancellationToken ct)
+    {
+        return await _context.Users.CountAsync(u => u.Type == EnumType.Ong, ct);
     }
 }

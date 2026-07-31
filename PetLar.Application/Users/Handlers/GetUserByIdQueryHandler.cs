@@ -23,6 +23,5 @@ public class GetUserByIdQueryHandler(IUserRepository _userRepository) : IRequest
         );
 
         return Result<UserDto>.Success(userDto);
-
     }
 }

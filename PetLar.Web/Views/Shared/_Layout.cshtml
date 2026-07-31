@@ -26,12 +26,10 @@
                     </span>
                     <span>PetLar</span>
                 </a>
-
                 <button class="navbar-toggler petlar-navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#petlarNavbar" aria-controls="petlarNavbar"
                         aria-expanded="false" aria-label="Abrir menu de navegação">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="petlarNavbar">
                     <ul class="navbar-nav petlar-nav-links mx-auto">
                         <li class="nav-item">
@@ -44,16 +42,15 @@
                             <a class="nav-link" asp-controller="" asp-action="">Para ONGs</a>
                         </li>
                     </ul>
-
                     <div class="petlar-nav-actions gap-4">
-                        <a class="btn btn-petlar-ngo">
+                        <a class="btn btn-petlar-ngo" asp-controller="" asp-action="">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
                                 <circle cx="12" cy="7" r="4" />
                             </svg>
                             Área da ONG
                         </a>
-                        <a class="btn btn-petlar-coral btn-md">Adote</a>
+                        <a class="btn btn-petlar-coral btn-md" asp-controller="" asp-action="">Adote</a>
                     </div>
                 </div>
             </div>
@@ -64,7 +61,6 @@
             @RenderBody()
         </main>
     </div>
-
     <footer class="petlar-footer">
         <div class="container">
             <div class="row gy-4">
@@ -86,7 +82,6 @@
                         Conectando corações e patinhas.<br>Cada adoção transforma duas vidas.
                     </p>
                 </div>
-
                 <div class="col-6 col-md-3">
                     <nav aria-label="Links do rodapé">
                         <h2 class="petlar-footer-title">Plataforma</h2>
@@ -97,7 +92,6 @@
                         </ul>
                     </nav>
                 </div>
-
                 <div class="col-6 col-md-3">
                     <nav aria-label="Links legais">
                         <h2 class="petlar-footer-title">Legal</h2>
@@ -109,7 +103,6 @@
                     </nav>
                 </div>
             </div>
-
             <div class="petlar-footer-bottom">
                 <small>© 2026 PetLar. Todos os direitos reservados.</small>
             </div>

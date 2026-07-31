@@ -12,28 +12,24 @@
                     <span class="petlar-home-eyebrow-icon" aria-hidden="true">♥</span>
                     @Model.AvailablePetsCount pets esperando por um lar
                 </p>
-
                 <h1 id="home-title" class="petlar-home-heading fw-bold">
                     Todo pet merece um lar
                     <span class="petlar-home-title">cheio de amor.</span>
                 </h1>
-
                 <p class="petlar-home-description">
                     Encontre cães e gatos esperando por uma nova família perto de você. Adoção simples, responsável e cheia de carinho.
                 </p>
-
                 <div class="d-flex flex-wrap gap-3">
                     <a class="btn btn-petlar-coral btn-lg" asp-controller="" asp-action="">Encontrar um pet</a>
                     <a class="btn btn-petlar-outline btn-lg" asp-controller="" asp-action="">Sou uma ONG</a>
                 </div>
-
                 <div class="row row-cols-3 g-3 petlar-home-stats" aria-label="Números do PetLar">
                     <div class="col">
                         <strong>—</strong>
                         <span>Adoções realizadas</span>
                     </div>
                     <div class="col">
-                        <strong>—</strong>
+                        <strong>@Model.OngsCount</strong>
                         <span>ONGs parceiras</span>
                     </div>
                     <div class="col">

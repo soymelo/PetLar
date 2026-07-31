@@ -1,6 +1,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using PetLar.Application.Pets.Queries;
+using PetLar.Application.Users.Queries;
 using PetLar.Web.Models;
 using PetLar.Web.ViewModels;
 using System.Diagnostics;
@@ -11,9 +12,10 @@ namespace PetLar.Web.Controllers
     {
         public async Task<IActionResult> Index(CancellationToken ct)
         {
-            var result = await _mediator.Send(new GetAvailablePetsQuery(), ct);
+            var petsResult = await _mediator.Send(new GetAvailablePetsQuery(), ct);
+            var ongsCountResult = await _mediator.Send(new GetOngsCountQuery(), ct);
 
-            if (result.IsFailure)
+            if (petsResult.IsFailure || ongsCountResult.IsFailure)
             {
                 return View("Error", new ErrorViewModel
                 {
@@ -21,11 +23,10 @@ namespace PetLar.Web.Controllers
                 });
             }
 
-            var pets = result.Value?.ToList() ?? [];
-
             var model = new HomeViewModel
             {
-                AvailablePets = pets
+                AvailablePets = petsResult.Value?.ToList() ?? [],
+                OngsCount = ongsCountResult.Value
             };
 
             return View(model);
