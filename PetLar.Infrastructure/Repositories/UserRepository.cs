@@ -24,8 +24,8 @@ public class UserRepository(PetLarDbContext _context) : IUserRepository
         return await _context.Users.FirstOrDefaultAsync(u => u.Email == email, ct);
     }
 
-    public async Task<int> GetOngsCountAsync(CancellationToken ct)
+    public async Task<int> CountByTypeAsync(UserType type, CancellationToken ct)
     {
-        return await _context.Users.CountAsync(u => u.Type == UserType.Ong, ct);
+        return await _context.Users.CountAsync(user => user.Type == type, ct);
     }
 }
