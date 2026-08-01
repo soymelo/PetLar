@@ -1,4 +1,4 @@
-﻿@model PetLar.Web.ViewModels.HomeViewModel
+@model PetLar.Web.ViewModels.HomeViewModel
 
 @{
     ViewData["Title"] = "Home Page";
@@ -53,6 +53,97 @@
                     <span class="petlar-adoption-heart" aria-hidden="true">♥</span>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<section class="petlar-available-pets py-5" aria-labelledby="available-pets-title">
+    <div class="petlar-available-pets-header">
+        <p class="petlar-available-pets-eyebrow">Encontre seu novo amigo</p>
+        <h2 id="available-pets-title">Pets esperando por você</h2>
+        <p>Cada adoção transforma duas vidas.</p>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <div class="col">
+            <article class="petlar-pet-card">
+                <div class="petlar-pet-card-image">
+                    <img src="~/images/petlar-luna-image1.webp" alt="Thor, cão disponível para adoção" />
+                    <span class="petlar-pet-card-tag petlar-pet-card-species">Cão</span>
+                    <span class="petlar-pet-card-tag petlar-pet-card-availability">Disponível</span>
+                </div>
+                <div class="petlar-pet-card-body">
+                    <h3>Thor</h3>
+                    <p class="petlar-pet-card-meta">2 anos <span aria-hidden="true">•</span> Médio <span aria-hidden="true">•</span> Macho</p>
+                    <p class="petlar-pet-card-location">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        São Paulo — SP
+                    </p>
+                </div>
+            </article>
+        </div>
+        <div class="col">
+            <article class="petlar-pet-card">
+                <div class="petlar-pet-card-image">
+                    <img src="~/images/petlar-luna-image1.webp" alt="Mel, gata disponível para adoção" />
+                    <span class="petlar-pet-card-tag petlar-pet-card-species">Gato</span>
+                    <span class="petlar-pet-card-tag petlar-pet-card-availability">Disponível</span>
+                </div>
+                <div class="petlar-pet-card-body">
+                    <h3>Mel</h3>
+                    <p class="petlar-pet-card-meta">1 ano <span aria-hidden="true">•</span> Pequeno <span aria-hidden="true">•</span> Fêmea</p>
+                    <p class="petlar-pet-card-location">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        Campinas — SP
+                    </p>
+                </div>
+            </article>
+        </div>
+        <div class="col">
+            <article class="petlar-pet-card">
+                <div class="petlar-pet-card-image">
+                    <img src="~/images/petlar-luna-image1.webp" alt="Bento, cão disponível para adoção" />
+                    <span class="petlar-pet-card-tag petlar-pet-card-species">Cão</span>
+                    <span class="petlar-pet-card-tag petlar-pet-card-availability">Disponível</span>
+                </div>
+                <div class="petlar-pet-card-body">
+                    <h3>Bento</h3>
+                    <p class="petlar-pet-card-meta">4 anos <span aria-hidden="true">•</span> Grande <span aria-hidden="true">•</span> Macho</p>
+                    <p class="petlar-pet-card-location">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        Santos — SP
+                    </p>
+                </div>
+            </article>
+        </div>
+        <div class="col">
+            <article class="petlar-pet-card">
+                <div class="petlar-pet-card-image">
+                    <img src="~/images/petlar-luna-image1.webp" alt="Lola, gata disponível para adoção" />
+                    <span class="petlar-pet-card-tag petlar-pet-card-species">Gato</span>
+                    <span class="petlar-pet-card-tag petlar-pet-card-availability">Disponível</span>
+                </div>
+                <div class="petlar-pet-card-body">
+                    <h3>Lola</h3>
+                    <p class="petlar-pet-card-meta">3 anos <span aria-hidden="true">•</span> Médio <span aria-hidden="true">•</span> Fêmea</p>
+                    <p class="petlar-pet-card-location">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        Guarulhos — SP
+                    </p>
+                </div>
+            </article>
         </div>
     </div>
 </section>

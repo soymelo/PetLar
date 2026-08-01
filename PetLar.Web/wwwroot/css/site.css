@@ -430,6 +430,122 @@ span.petlar-home-title {
     line-height: 1;
 }
 
+.petlar-available-pets {
+    border-top: 1px solid var(--petlar-border);
+}
+
+.petlar-available-pets-header {
+    margin-bottom: 2rem;
+}
+
+.petlar-available-pets-eyebrow {
+    margin: 0 0 0.5rem;
+    color: var(--petlar-teal);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.petlar-available-pets h2 {
+    margin: 0;
+    color: var(--petlar-text);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.petlar-available-pets-header > p:last-child {
+    margin: 0.75rem 0 0;
+    color: var(--petlar-text-muted);
+}
+
+.petlar-pet-card {
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid var(--petlar-border);
+    border-radius: 1rem;
+    background-color: #fff;
+    box-shadow: 0 0.5rem 1.5rem rgb(37 48 47 / 8%);
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.petlar-pet-card:hover {
+    box-shadow: 0 0.75rem 1.75rem rgb(37 48 47 / 13%);
+    transform: translateY(-0.25rem);
+}
+
+.petlar-pet-card-image {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    background-color: var(--petlar-teal-light);
+}
+
+.petlar-pet-card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.petlar-pet-card-tag {
+    position: absolute;
+    top: 0.875rem;
+    padding: 0.35rem 0.625rem;
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.petlar-pet-card-species {
+    left: 0.875rem;
+    background-color: #fff;
+    color: var(--petlar-text);
+}
+
+.petlar-pet-card-availability {
+    right: 0.875rem;
+    background-color: var(--petlar-teal-light);
+    color: var(--petlar-teal);
+}
+
+.petlar-pet-card-body {
+    padding: 1.25rem;
+}
+
+.petlar-pet-card-body h3 {
+    margin: 0;
+    color: var(--petlar-text);
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.petlar-pet-card-meta,
+.petlar-pet-card-location {
+    margin: 0;
+    color: var(--petlar-text-muted);
+    font-size: 0.9rem;
+}
+
+.petlar-pet-card-meta {
+    margin-top: 0.5rem;
+}
+
+.petlar-pet-card-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    margin-top: 1rem;
+    color: var(--petlar-teal);
+    font-weight: 700;
+}
+
+.petlar-pet-card-location svg {
+    width: 1rem;
+    height: 1rem;
+}
+
 @media (max-width: 991.98px) {
     .petlar-home-image,
     .petlar-home-image > img {
