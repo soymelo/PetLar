@@ -8,7 +8,7 @@ namespace PetLar.Application.Users.Handlers;
 
 public class GetOngsCountQueryHandler(IUserRepository _userRepository) : IRequestHandler<GetOngsCountQuery, Result<int>>
 {
-    public async Task<Result<int>> Handle(GetOngsCountQuery request, CancellationToken ct)
+    public async Task<Result<int>> Handle(GetOngsCountQuery _, CancellationToken ct)
     {
         var ongsCount = await _userRepository.GetOngsCountAsync(ct);
 
