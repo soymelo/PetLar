@@ -1,7 +1,7 @@
-﻿using MediatR;
+using MediatR;
 using PetLar.Application.Common.Results;
 using PetLar.Application.Pets.DTOs;
 
 namespace PetLar.Application.Pets.Queries;
 
-public record GetAvailablePetsQuery() : IRequest<Result<IEnumerable<PetDto>>>;
+public record GetAvailablePetsQuery(int Limit) : IRequest<Result<IEnumerable<PetDto>>>;

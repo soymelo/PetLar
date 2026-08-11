@@ -35,12 +35,20 @@ public class PetRepository(PetLarDbContext _context) : IPetRepository
         return await _context.Pets.Where(p => p.OngId == ongId).Include(p => p.Ong).ToListAsync(ct);
     }
 
-    public async Task<IEnumerable<Pet>> GetAvailablePetsAsync(CancellationToken ct)
+    public async Task<IEnumerable<Pet>> GetAvailablePetsAsync(int limit, CancellationToken ct)
     {
         return await _context.Pets
             .AsNoTracking()
             .Where(p => p.Status == PetStatus.Available)
+            .OrderBy(p => p.Name)
+            .ThenBy(p => p.Id)
+            .Take(limit)
             .ToListAsync(ct);
+    }
+
+    public Task<int> CountByStatusAsync(PetStatus status, CancellationToken ct)
+    {
+        return _context.Pets.CountAsync(pet => pet.Status == status, ct);
     }
 
 }
