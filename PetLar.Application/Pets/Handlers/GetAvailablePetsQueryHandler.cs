@@ -20,6 +20,8 @@ public class GetAvailablePetsQueryHandler(IPetRepository _petRepository) : IRequ
             p.Species,
             p.Size,
             p.Status,
+            p.State,
+            p.City,
             p.OngId
         )).ToList();
 

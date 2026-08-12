@@ -20,6 +20,8 @@ public class GetAllPetsQueryHandler(IPetRepository _petRepository) : IRequestHan
             p.Species,
             p.Size,
             p.Status,
+            p.State,
+            p.City,
             p.OngId
         )).ToList();
 

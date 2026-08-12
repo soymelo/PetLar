@@ -17,7 +17,16 @@ public class PetLarDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
-        modelBuilder.Entity<Adoption>(entity =>
+        modelBuilder.Entity<Pet>(entity =>
+        {
+            entity.Property(pet => pet.City)
+                  .HasMaxLength(50);
+
+            entity.Property(pet => pet.State)
+                  .HasMaxLength(2);
+        });
+
+        modelBuilder.Entity<Adoption>(entity => 
         {
             entity.HasKey(adoption => adoption.Id);
 

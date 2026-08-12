@@ -20,6 +20,8 @@ public class GetPetsByOngIdQueryHandler(IPetRepository _petRepository) : IReques
             p.Species,
             p.Size,
             p.Status,
+            p.State,
+            p.City,
             p.OngId
         )).ToList();
 

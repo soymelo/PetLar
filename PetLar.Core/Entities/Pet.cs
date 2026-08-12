@@ -11,6 +11,8 @@ public class Pet
     public PetSpecies Species { get; set; }
     public PetSize Size { get; set; }
     public PetStatus Status { get; set; }
+    public string State { get; set; } = string.Empty;
+    public string City { get; set; } = string.Empty;
 
     public Guid OngId { get; set; }
     public User Ong { get; set; } = null!;

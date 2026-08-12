@@ -10,5 +10,7 @@ public record PetDto(
     PetSpecies Species,
     PetSize Size,
     PetStatus Status,
+    string State,
+    string City,
     Guid OngId
     );

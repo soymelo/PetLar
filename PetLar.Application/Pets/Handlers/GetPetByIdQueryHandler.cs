@@ -23,6 +23,8 @@ public class GetPetByIdQueryHandler(IPetRepository _petRepository) : IRequestHan
             pet.Species,
             pet.Size,
             pet.Status,
+            pet.State,
+            pet.City,
             pet.OngId
         );
 
