@@ -3,13 +3,13 @@
 <div class="col">
     <article class="petlar-pet-card">
         <div class="petlar-pet-card-image">
-            <img src="~/images/petlar-luna-image1.webp" alt="@Model.Name, @Model.Species disponível para adoção" />
-            <span class="petlar-pet-card-tag petlar-pet-card-species">@Model.Species</span>
+            <img src="~/images/petlar-luna-image1.webp" alt="@Model.Name, @Model.Species.ToDisplayName() disponível para adoção" />
+            <span class="petlar-pet-card-tag petlar-pet-card-species">@Model.Species.ToDisplayName()</span>
             <span class="petlar-pet-card-tag petlar-pet-card-availability">Disponível</span>
         </div>
         <div class="petlar-pet-card-body">
             <h3>@Model.Name</h3>
-            <p class="petlar-pet-card-meta">@Model.Age @(@Model.Age == 1 ? "ano" : "anos") <span aria-hidden="true">•</span> @Model.Size <span aria-hidden="true">•</span> @Model.Gender</p>
+            <p class="petlar-pet-card-meta">@Model.Age @(@Model.Age == 1 ? "ano" : "anos") <span aria-hidden="true">•</span> @Model.Size.ToDisplayName() <span aria-hidden="true">•</span> @Model.Gender.ToDisplayName()</p>
             <p class="petlar-pet-card-location">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                     <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" />
